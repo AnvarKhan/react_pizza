@@ -28,12 +28,12 @@ function Card() {
   }
 
   const onPlusCartItem = (id) => {
-    dispatch(plusCartItem());
+    dispatch(plusCartItem(id));
   }
 
   
   const onMinusCartItem = (id) => {
-    dispatch(minusCartItem());
+    dispatch(minusCartItem(id));
   }
 
   const onClickOrder = () => {
