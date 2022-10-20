@@ -10,13 +10,11 @@ export const fetchPizzas = (sortBy, category) => (dispatch) => {
     type: 'SET_LOADED',
     payload: false,
   });
-
-  let res = axios
-    .get(`/pizzas?${category !== null ? `category=${category}` : ''}&_sort=${sortBy.type}&_order=
+  axios
+    .get(`https://react-fake-server-j8oq.vercel.app/pizzas?${category !== null ? `category=${category}` : ''}&_sort=${sortBy.type}&_order=
     ${sortBy.order}`,).then(({ data }) => {
       dispatch(setPizzas(data));
     });
-    console.log(res);
 };
 
 export const setPizzas = (items) => ({
